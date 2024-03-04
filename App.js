@@ -1,13 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-const Cat = ({nome, sobrenome, idade}) =>{
-  return <Text>Oi gente, somos o Blackpink {getNomeCompleto(nome, sobrenome, idade).toUpperCase()}! e eu tenho {idade} anos.</Text>
-}
-
 const getNomeCompleto  = (nome, sobrenome) => {
   return nome + ''+ sobrenome;
 }
+
+const Cat = ({nome, sobrenome, idade}) =>{
+//let texto = "anos";
+//if(idade <= 1){
+  //texto = "ano";
+//}
+
+const texto = (idade <= 1) ? "ano" : "anos";
+
+  return <Text>Oi gente, somos o Blackpink {getNomeCompleto(nome, sobrenome, idade).toUpperCase()}! e eu tenho {idade} {texto}.</Text>
+}
+
 
 export default IFAL;
 
