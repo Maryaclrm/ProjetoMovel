@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-const Cat = () =>{
-  return <Text>Hi guyss, this is Blackpink {getNomeCompleto("Rosé", "Park").toUpperCase()}</Text>
+const Cat = ({nome, sobrenome}) =>{
+  return <Text>Hi guyss, this is Blackpink {getNomeCompleto(nome, sobrenome).toUpperCase()}!</Text>
 }
 
 const getNomeCompleto  = (nome, sobrenome) => {
@@ -14,9 +14,10 @@ export default IFAL;
 function IFAL() {
   return (
     <View style={styles.container}>
-     <Cat/>
-     <Cat/>
-     <Cat/>
+     <Cat nome="Lisa" sobrenome=" Manoban"/>
+     <Cat nome="Jennie" sobrenome=" Kim"/>
+     <Cat nome="Jisoo" sobrenome=" Kim"/>
+     <Cat nome="Rosé" sobrenome=" Park"/>
       <StatusBar style="auto" />
     </View>
   );
