@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button} from 'react-native';
 import { useState } from'react';
 import Calculadora from './calculadora';
+import TelaLoginNetflix from './TelaloginNetflix';
 
 const getNomeCompleto  = (nome, sobrenome) => {
   return nome + ''+ sobrenome;
@@ -19,7 +20,7 @@ const texto = (idade <= 1) ? "ano" : "anos";
 }
 
 
-export default Calculadora;
+export default TelaLoginNetflix;
 
 function IFAL(){
     const [cliques, setCliques] = useState(0);
@@ -40,7 +41,7 @@ function IFAL(){
     <Text>Cliques: {cliques}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
