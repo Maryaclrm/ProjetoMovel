@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button} from 'react-native';
-import { useState } from'react';
-import Calculadora from './calculadora';
-import TelaLoginNetflix from './TelaloginNetflix';
+import { Text, View} from 'react-native';
+import { Link } from'expo-router';
 
 const getNomeCompleto  = (nome, sobrenome) => {
   return nome + ''+ sobrenome;
@@ -18,36 +16,18 @@ const texto = (idade <= 1) ? "ano" : "anos";
 
   return <Text>Oi gente, somos o Blackpink {getNomeCompleto(nome, sobrenome, idade).toUpperCase()}! e eu tenho {idade} {texto}.</Text>
 }
-
-
-export default TelaLoginNetflix;
-
 function IFAL(){
-    const [cliques, setCliques] = useState(0);
-  
+
   return (
-    <View style={styles.container}>
+    <View>
      <Cat nome="Lisa" sobrenome=" Manoban" idade={26}/>
      <Cat nome="Jennie" sobrenome=" Kim" idade={28}/>
      <Cat nome="Jisoo" sobrenome=" Kim " idade={29}/>
      <Cat nome="Rosé" sobrenome=" Park" idade={27}/>
       <StatusBar style="auto" />
-    <Button title="Clique aqui se você for linda" onPress={() =>{
-      setCliques(cliques + 1);
-    }}/>
-    <Button title="zerar" onPress={() =>{
-      setCliques(0);
-    }}/>
-    <Text>Cliques: {cliques}</Text>
+    <Link href="/calculadora">Abrir Calculadora</Link>
     </View>
   );
-};
+  };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#09ASON',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default IFAL;
